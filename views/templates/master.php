@@ -1,4 +1,4 @@
-<nav class="nav nav-fill">
+<nav class="nav nav-fill mt-5">
     <li class="nav-item">
         <a class="nav-link active" href="index.php">Home</a>
     </li>
@@ -15,7 +15,19 @@
             <a class="nav-link" href="albums.php">Albums</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="cerrar.php">Cerrar sesion</a>
+            <div class="btn-group">
+                <button class="btn btn-secondary dropdown-toggle" type="button"
+                        id="triggerId" data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false">
+                    MI PERFIL
+                </button>
+                <div class="dropdown-menu dropdown-menu-right"
+                     aria-labelledby="triggerId">
+                    <a class="dropdown-item" href="ver.php">Ver perfil</a>
+                    <a class="dropdown-item" href="cerrar.php">Cerrar sesion</a>
+                </div>
+            </div>
         </li>
     <?php }else { ?>
         <li class="nav-item">

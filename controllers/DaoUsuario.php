@@ -49,4 +49,25 @@ class DaoUsuario
             return $e->getMessage();
         }
     }
+
+    public function ActualizarUsuario(Usuario $usuario){
+        try{
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $parameters = array(
+                ':dni' => $usuario->getDni(),
+                ':nombre' => $usuario->getNombre(),
+                ':apellido' => $usuario->getApellido(),
+                ':email' => $usuario->getEmail(),
+                ':contrasenia' => $usuario->getContrasenia()
+            );
+            $this->conn->ejecutar("UPDATE usuarios SET nombre = :nombre, "
+                ."apellido = :apellido, email = :email, contrasenia = :contrasenia WHERE dni = :dni",
+                $parameters);
+
+        }catch (Exception $e){
+            return $e->getMessage();
+        }
+
+        return "Usuario actualizado";
+    }
 }

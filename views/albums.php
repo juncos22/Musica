@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Nuevo album</title>
+    <title>Albums | Musica</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport"
@@ -15,8 +15,12 @@
 <?php require_once 'templates/master.php'; ?>
 <?php require_once '../controllers/DaoArtista.php'; ?>
 <?php
-$dao = new DaoArtista();
-$resultado = $dao->MostrarArtistas();
+if (isset($_SESSION['usuario'])) {
+    $dao = new DaoArtista();
+    $resultado = $dao->MostrarArtistas();
+}else {
+    header("location: index.php?msg=ACCESO DENEGADO, SOLO USUARIOS REGISTRADOS!!");
+}
 ?>
 <div class="container mt-5">
     <form action="../controllers/Transacciones.php" method="post" style="width: 400px; margin: auto;">

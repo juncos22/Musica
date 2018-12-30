@@ -64,7 +64,7 @@
     <div class="row mt-5">
         <?php while ($album = $albums->fetch(PDO::FETCH_ASSOC)) { ?>
             <div class="column m-3">
-                <div class="card text-center" style="width: 300px; height: 450px">
+                <div class="card text-center" style="width: 300px; height: 450px;">
                     <img class="img-thumbnail" width="300" src="<?php echo $album['portada']; ?>" alt="portada">
                     <div class="card-body">
                         <h4 class="card-title"><?php echo $album['nombre']; ?></h4>

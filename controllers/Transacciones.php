@@ -58,4 +58,17 @@ if (isset($_POST['enviar'])){
     $artista = new Artista($nombre, $estilo, $portada);
     $msg = $dao->InsertarArtista($artista);
     header("location: ../views/artistas.php?msg=$msg");
+}elseif (isset($_POST['actualizar'])){
+    session_start();
+    $dniUsuario = $_SESSION['usuario']['dni'];
+    $nombreUsuario = $_POST['nombre'];
+    $apellidoUsuario = $_POST['apellido'];
+    $emailUsuario = $_POST['email'];
+    $contraUsuario = $_POST['contrasenia'];
+
+    $usuario = new Usuario($dniUsuario, $nombreUsuario, $apellidoUsuario, $emailUsuario, $contraUsuario);
+    $dao = new DaoUsuario();
+    $msg = $dao->ActualizarUsuario($usuario);
+    session_destroy();
+    header("location: ../views/index.php?msg=$msg");
 }

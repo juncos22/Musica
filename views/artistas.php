@@ -15,8 +15,12 @@
 <?php require_once 'templates/master.php'; ?>
 <?php require_once '../controllers/DaoEstilo.php'; ?>
 <?php
-$dao = new DaoEstilo();
-$resultado =  $dao->MostrarEstilos();
+if (isset($_SESSION['usuario'])) {
+    $dao = new DaoEstilo();
+    $resultado = $dao->MostrarEstilos();
+}else {
+    header("location: index.php?msg=ACCESO DENEGADO, SOLO USUARIOS REGISTRADOS!!");
+}
 ?>
 
 <div class="container mt-5">
