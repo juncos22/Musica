@@ -33,6 +33,12 @@
         </li>
     <?php }else { ?>
         <li class="nav-item">
+            <a class="nav-link" href="ver_artistas.php">Artistas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="ver_canciones.php">Canciones</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="login.php">Iniciar sesion</a>
         </li>
     <?php } ?>
