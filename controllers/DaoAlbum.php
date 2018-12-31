@@ -31,7 +31,7 @@ class DaoAlbum {
     public function MostrarAlbums(){
         try {
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return $this->conn->ejecutarSelect("SELECT * FROM albums");
+            return $this->conn->ejecutarSelect("SELECT * FROM albums ORDER BY nombre ASC");
         }catch (Exception $e){
             echo "ERROR: ".$e->getMessage();
         }

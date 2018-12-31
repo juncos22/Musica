@@ -9,10 +9,12 @@
 require_once '../models/Usuario.php';
 require_once '../models/Album.php';
 require_once '../models/Artista.php';
+require_once '../models/Cancion.php';
 
 require_once 'DaoUsuario.php';
 require_once 'DaoAlbum.php';
 require_once 'DaoArtista.php';
+require_once 'DaoCancion.php';
 
 if (isset($_POST['enviar'])){
     $dni = $_POST['dni'];
@@ -71,4 +73,16 @@ if (isset($_POST['enviar'])){
     $msg = $dao->ActualizarUsuario($usuario);
     session_destroy();
     header("location: ../views/index.php?msg=$msg");
+}elseif (isset($_POST['insertar'])){
+    $nombreCancion = $_POST['nombre'];
+    $estiloCancion = $_POST['estilo'];
+    $artistaCancion = $_POST['artista'];
+    $albumCancion = $_POST['album'];
+    $videoCancion = $_POST['video'];
+
+    $cancion = new Cancion($nombreCancion, $estiloCancion, $artistaCancion, $albumCancion, $videoCancion);
+    $dao = new DaoCancion();
+    $msg = $dao->InsertarCancion($cancion);
+
+    header("location: ../views/canciones.php?msg=$msg");
 }

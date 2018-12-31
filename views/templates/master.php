@@ -9,7 +9,7 @@
             <a class="nav-link" href="artistas.php">Artistas</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Canciones</a>
+            <a class="nav-link" href="canciones.php">Canciones</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="albums.php">Albums</a>
@@ -25,6 +25,8 @@
                 <div class="dropdown-menu dropdown-menu-right"
                      aria-labelledby="triggerId">
                     <a class="dropdown-item" href="ver.php">Ver perfil</a>
+                    <a class="dropdown-item" href="ver_canciones.php">Ver canciones</a>
+                    <a class="dropdown-item" href="ver_artistas.php">Ver artistas</a>
                     <a class="dropdown-item" href="cerrar.php">Cerrar sesion</a>
                 </div>
             </div>

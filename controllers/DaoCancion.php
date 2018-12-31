@@ -28,4 +28,15 @@ class DaoCancion {
 
         return "Cancion agregada";
     }
+
+    public function MostrarCanciones(){
+        try{
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $this->conn->ejecutarSelect("SELECT * FROM canciones");
+
+        }catch (Exception $e){
+            echo "ERROR: ".$e->getMessage();
+            return null;
+        }
+    }
 }

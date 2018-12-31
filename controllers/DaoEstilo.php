@@ -27,7 +27,7 @@ class DaoEstilo {
     public function MostrarEstilos(){
         try {
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return $this->conn->ejecutarSelect("SELECT * FROM estilos");
+            return $this->conn->ejecutarSelect("SELECT * FROM estilos ORDER BY nombre ASC");
         }catch (Exception $e){
             echo "ERROR: ".$e->getMessage();
             return null;

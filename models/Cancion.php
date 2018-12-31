@@ -9,9 +9,8 @@ class Cancion
     private $album;
     private $video;
 
-    public function __construct($id, $nombre, $estilo, $artista, $album, $video)
+    public function __construct($nombre, $estilo, $artista, $album, $video)
     {
-        $this->id = $id;
         $this->nombre = $nombre;
         $this->estilo = $estilo;
         $this->artista = $artista;
