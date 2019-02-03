@@ -2,6 +2,6 @@
 
 define('SERVER', 'localhost');
 define('DATABASE', 'musica');
-define('USER', 'root');
-define('PASSWORD', '');
+define('USER', 'guest');
+define('PASSWORD', 'guest');
 

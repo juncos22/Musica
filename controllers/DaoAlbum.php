@@ -19,7 +19,7 @@ class DaoAlbum {
                 ':nombre' => $album->getNombre(), 
                 ':artista' => $album->getArtista(),
                 ':portada' => $album->getPortada());
-            $this->conn->ejecutar("INSERT INTO albums (nombre, artista, portada) VALUES (:nombre, :artista, :portada)", $parameters);
+            $this->conn->ejecutar("INSERT INTO album (nombre, artista, portada) VALUES (:nombre, :artista, :portada)", $parameters);
 
         } catch (Exception $e) {
             return $e->getMessage();
@@ -31,7 +31,7 @@ class DaoAlbum {
     public function MostrarAlbums(){
         try {
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return $this->conn->ejecutarSelect("SELECT * FROM albums ORDER BY nombre ASC");
+            return $this->conn->ejecutarSelect("SELECT * FROM album ORDER BY nombre ASC");
         }catch (Exception $e){
             echo "ERROR: ".$e->getMessage();
         }

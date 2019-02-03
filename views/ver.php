@@ -22,7 +22,7 @@ if (isset($_SESSION['usuario'])){
     $nombre = $_SESSION['usuario']['nombre'];
     $apellido = $_SESSION['usuario']['apellido'];
     $email = $_SESSION['usuario']['email'];
-    $contrasenia = $_SESSION['usuario']['contrasenia'];
+    $contrasenia = $_SESSION['usuario']['contrasena'];
 }else {
     header("location: index.php?msg=ACCESO DENEGADO, SOLO USUARIOS REGISTRADOS!!!");
 }

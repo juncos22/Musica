@@ -28,7 +28,7 @@ class DaoUsuario
                 ':email' => $usuario->getEmail(),
                 ':contrasenia' => $usuario->getContrasenia());
 
-            $this->conn->ejecutar("INSERT INTO usuarios (dni, nombre, apellido, email, contrasenia) "
+            $this->conn->ejecutar("INSERT INTO usuarios (dni, nombre, apellido, email, contrasena) "
                 ."VALUES (:dni, :nombre, :apellido, :email, :contrasenia)", $parameters);
 
         }catch (Exception $e){
@@ -44,7 +44,7 @@ class DaoUsuario
             $parameters = array(
                 ':email' => $email,
                 ':contrasenia' => $contrasenia);
-            return $this->conn->ejecutarSelect("SELECT * FROM usuarios WHERE email = :email AND contrasenia = :contrasenia", $parameters);
+            return $this->conn->ejecutarSelect("SELECT * FROM usuarios WHERE email = :email AND contrasena = :contrasenia", $parameters);
         }catch (Exception $e){
             return $e->getMessage();
         }
@@ -61,7 +61,7 @@ class DaoUsuario
                 ':contrasenia' => $usuario->getContrasenia()
             );
             $this->conn->ejecutar("UPDATE usuarios SET nombre = :nombre, "
-                ."apellido = :apellido, email = :email, contrasenia = :contrasenia WHERE dni = :dni",
+                ."apellido = :apellido, email = :email, contrasena = :contrasenia WHERE dni = :dni",
                 $parameters);
 
         }catch (Exception $e){
